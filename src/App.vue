@@ -1,5 +1,5 @@
 <template>
-  <outcomes-research-wrapper :_title="`NOSE HHT Questionnaire`">
+  <outcomes-research-wrapper :_title="`SNORE Questionnaire`">
     <v-app>
       <Questionnaire />
       <v-footer :padless="true">

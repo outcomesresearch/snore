@@ -2,7 +2,8 @@
   <v-card class="mb-12">
     <v-card-title>
       <div class="flow">
-        <span class="flow-around ml-3 mb-3"><TranslationDropdown /></span
+        <span class="flow-around ml-3 mb-3" v-if="foreignLanguageSupport"
+          ><TranslationDropdown /></span
         >{{ t(k.HEADER_TITLE) }}
       </div>
     </v-card-title>
@@ -10,8 +11,8 @@
       <p class="grey--text text--darken-3">
         {{ t(k.HEADER_BODY_1) }}
         <strong class="text-decoration-underline">
-          {{ t(k.HEADER_BODY_2) }}</strong
-        >{{ t(k.HEADER_BODY_3) }}
+          {{ t(k.HEADER_BODY_2) }}
+        </strong>
       </p>
       <p class="mb-0 grey--text text--darken-3">{{ t(k.HEADER_BODY_4) }}</p>
     </v-card-text>
@@ -23,6 +24,11 @@ import TranslationDropdown from './TranslationDropdown.vue';
 
 export default {
   components: { TranslationDropdown },
+  data() {
+    return {
+      foreignLanguageSupport: false,
+    };
+  },
 };
 </script>
 
