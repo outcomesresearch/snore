@@ -69,6 +69,10 @@ export default {
     margin: 10px 0px;
   }
 
+  .step-label {
+    font-size: 18px;
+  }
+
   @media only screen and (max-width: $SMALL) {
     .v-label,
     .v-card__text {

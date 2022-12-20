@@ -33,6 +33,11 @@
         </v-form>
       </div>
       <v-divider class="my-2" />
+    </v-card>
+    <v-card class="mb-12">
+      <Important5Table :prompts="section1.prompts" />
+    </v-card>
+    <v-card class="mb-12">
       <ResultsTable :allSections="[section1]" />
     </v-card>
     <v-card>
@@ -52,6 +57,7 @@
 import keys from '../assets/locales/keys';
 import HeaderCard from './HeaderCard';
 import ResultsTable from './ResultsTable';
+import Important5Table from './Important5Table';
 
 const BREAKPOINT = 700;
 
@@ -60,13 +66,13 @@ const initValues = (arr) => arr.reduce((a, i) => ({ ...a, [i]: null }), {});
 const initOptions = (arr) => arr.map((o, i) => ({ text: o, value: i }));
 
 const getMatchingKeys = (stub) =>
-  Object.keys(keys).filter((k) => k.includes(stub));
+  Object.keys(keys).filter((k) => k.includes(stub) && !k.includes('SHORT'));
 
 const SECTION1_PROMPTS = getMatchingKeys('SECTION1_PROMPT');
 const SECTION1_OPTIONS = getMatchingKeys('SECTION1_OPTION');
 
 export default {
-  components: { HeaderCard, ResultsTable },
+  components: { HeaderCard, ResultsTable, Important5Table },
   methods: {
     handleStepChange(indexInSection, section) {
       // On first questions of steps 2 and 3, validate previous section's answers
@@ -109,10 +115,6 @@ export default {
 
 .card-stepper {
   max-width: 800px;
-}
-
-.step-label {
-  font-size: 18px;
 }
 
 /* inline error messages under each radio section */

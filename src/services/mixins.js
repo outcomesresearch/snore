@@ -1,5 +1,9 @@
 import locale_keys from '../assets/locales/keys';
 
+export const getShortID = (key) => {
+  return `${key}_SHORT`;
+};
+
 export default [
   {
     data: function () {
@@ -9,6 +13,7 @@ export default [
       t(key) {
         return this.$vuetify.lang.t(`$vuetify.${key}`);
       },
+      getShortID,
       isMild({ sum, average }) {
         return {
           sum: sum <= 25,

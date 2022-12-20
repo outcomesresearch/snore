@@ -18,7 +18,8 @@ export default {
   [keys.HEADER_BODY_4]: 'We thank you for your participation.',
   [keys.SECTION1_INSTRUCTIONS_1]:
     'Taking into consideration the severity of your problem when you experience it and its frequency, please assess each statement below and select its degree of severity.',
-
+  [keys.TOP_5_INSTRUCTIONS]:
+    'Please check the items that most affect your health (maximum of 5 items).',
   [keys.SECTION1_OPTION_1]: 'No problem',
   [keys.SECTION1_OPTION_2]: 'Very mild problem',
   [keys.SECTION1_OPTION_3]: 'Mild or minor problem',
@@ -77,4 +78,40 @@ export default {
 
   [keys.BASED_ON_AVERAGE]: 'Based on average',
   [keys.BASED_ON_SUM]: 'Based on sum',
+
+  // Shortened versions of prompts to use in grid
+  [keys.SECTION1_PROMPT_1_SHORT]:
+    'Waking up during the night; inability to have a good night’s sleep',
+  [keys.SECTION1_PROMPT_2_SHORT]: 'Loud/excessive snoring',
+  [keys.SECTION1_PROMPT_3_SHORT]: 'Restless during sleep',
+  [keys.SECTION1_PROMPT_4_SHORT]: 'Waking up tired',
+  [keys.SECTION1_PROMPT_5_SHORT]:
+    'Exhaustion, fatigue (e.g. falling asleep while reading a book)',
+  [keys.SECTION1_PROMPT_6_SHORT]: 'Frequent yawning',
+  [keys.SECTION1_PROMPT_7_SHORT]: 'Tiredness behind the wheel',
+  [keys.SECTION1_PROMPT_8_SHORT]: 'Problems with memory / concentration',
+  [keys.SECTION1_PROMPT_9_SHORT]:
+    'Limits productivity at certain moments during the day',
+  [keys.SECTION1_PROMPT_10_SHORT]:
+    'Limits participation in community, volunteer, religious or spiritual activities',
+  [keys.SECTION1_PROMPT_11_SHORT]:
+    'Amount of medical care related to sleeping disturbances',
+  [keys.SECTION1_PROMPT_12_SHORT]:
+    'Interaction between obstructive sleep disturbances and other medical problems',
+  [keys.SECTION1_PROMPT_13_SHORT]:
+    'Fear of medical problems limits car trips to other regions or parts of the country',
+  [keys.SECTION1_PROMPT_14_SHORT]: 'Interference with sexual relations',
+  [keys.SECTION1_PROMPT_15_SHORT]: 'Financial burden related to the illness',
+  [keys.SECTION1_PROMPT_16_SHORT]: '“Frayed” nerves; “short tempered”',
+  [keys.SECTION1_PROMPT_17_SHORT]: 'Inability to relax; always worried',
+  [keys.SECTION1_PROMPT_18_SHORT]: 'Marital tensions, stress and tension',
+  [keys.SECTION1_PROMPT_19_SHORT]: '“Foul” temper',
+  [keys.SECTION1_PROMPT_20_SHORT]:
+    'Inability to maintain a close relationship with partner / loved ones',
+  [keys.SECTION1_PROMPT_21_SHORT]: 'Loss of desire for sexual relations',
+  [keys.SECTION1_PROMPT_22_SHORT]:
+    'Feeling like there is no hope for the future',
+  [keys.SECTION1_PROMPT_23_SHORT]: 'Competencies are questioned',
+  [keys.SECTION1_PROMPT_24_SHORT]: 'Credibility is questioned',
+  [keys.SECTION1_PROMPT_25_SHORT]: 'Changes in your work due to the illness',
 };
