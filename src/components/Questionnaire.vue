@@ -35,10 +35,13 @@
       <v-divider class="my-2" />
     </v-card>
     <v-card class="mb-12">
-      <Important5Table :prompts="section1.prompts" />
+      <Important5Table
+        :prompts="section1.prompts"
+        @top-five-changed="(e) => (top5ItemKeys = e)"
+      />
     </v-card>
     <v-card class="mb-12">
-      <ResultsTable :allSections="[section1]" />
+      <ResultsTable :allSections="[section1]" :top5ItemKeys="top5ItemKeys" />
     </v-card>
     <v-card>
       <v-card-text>
@@ -87,6 +90,7 @@ export default {
   data() {
     return {
       e6: 1,
+      top5ItemKeys: [],
       isSmallWidth: window.innerWidth < BREAKPOINT,
       rules: [(v) => v !== null],
       section1: {

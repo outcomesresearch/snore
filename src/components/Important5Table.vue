@@ -37,6 +37,8 @@ export default {
       } else {
         this.chosenOptions.push(id);
       }
+
+      this.$emit('top-five-changed', this.chosenOptions);
     },
   },
   data() {

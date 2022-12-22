@@ -79,7 +79,7 @@ const fetchAllValues = (sections) => {
 };
 
 export default {
-  props: ['allSections'],
+  props: ['allSections', 'top5ItemKeys'],
   computed: {
     allFieldsHaveValues() {
       return fetchAllValues(this.allSections).every((e) => e !== null);
