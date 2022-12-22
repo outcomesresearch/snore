@@ -24,6 +24,7 @@ export default {
 
 <style lang="scss">
 @import './assets/scss/breakpoints.scss';
+@import './assets/scss/reverseSwitch.scss';
 
 #app {
   -webkit-font-smoothing: antialiased;

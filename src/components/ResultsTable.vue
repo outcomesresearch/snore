@@ -1,14 +1,26 @@
 <template>
   <v-card-text class="pa-6">
-    <div>
-      <h4 v-if="!allFieldsHaveValues" class="font-italic mb-4">
-        {{ t(k.SCORE_WHEN_FORM_COMPLETE) }}
-      </h4>
-    </div>
-    <div v-if="allFieldsHaveValues" class="results mb-4">
-      <h3 class="black--text mb-2">{{ t(k.SCORE) }}:</h3>
-      <pre>{{ t(k.SUM) }}: {{ sum }}</pre>
-      <pre>{{ t(k.AVERAGE) }}: {{ average.toFixed(3) }}</pre>
+    <div class="results-table-title">
+      <div>
+        <h4 v-if="!allFieldsHaveValues" class="font-italic mb-4">
+          {{ t(k.SCORE_WHEN_FORM_COMPLETE) }}
+        </h4>
+        <div v-else class="results mb-4">
+          <h3 class="black--text mb-2">{{ t(k.SCORE) }}:</h3>
+          <pre>{{ t(k.SUM) }}: {{ sum }}</pre>
+          <pre>{{ t(k.AVERAGE) }}: {{ average.toFixed(3) }}</pre>
+        </div>
+      </div>
+      <div class="toggle">
+        <v-switch
+          class="v-input--reverse"
+          inset
+          v-model="top5ToggleChoice"
+          :disabled="!allFieldsHaveValues || top5ItemKeys.length < 1"
+        >
+          <template #label>{{ t(k.ONLY_INCLUDE_TOP_5) }}</template>
+        </v-switch>
+      </div>
     </div>
 
     <v-simple-table>
@@ -73,9 +85,11 @@
 
 <script>
 const fetchAllValues = (sections) => {
-  return sections
-    .map(({ values }) => Object.entries(values).map(([, value]) => value))
-    .flat();
+  return sections && sections.length
+    ? sections
+        .map(({ values }) => Object.entries(values).map(([, value]) => value))
+        .flat()
+    : [];
 };
 
 export default {
@@ -84,34 +98,60 @@ export default {
     allFieldsHaveValues() {
       return fetchAllValues(this.allSections).every((e) => e !== null);
     },
+    scoreOnlyTop5() {
+      // Only score top 5 if toggle deliberately switched, and user has chosen >0 items
+      return this.top5ItemKeys.length > 0 && this.top5ToggleChoice;
+    },
+    sectionsToScore() {
+      // If only scoring most important items, filter on those keys, get their values to pass that to the ResultsTable component
+      return this.scoreOnlyTop5
+        ? [
+            {
+              values: this.allSections[0].prompts
+                .filter((p) => this.top5ItemKeys.includes(p))
+                .map((k) => this.allSections[0].values[k]),
+            },
+          ]
+        : this.allSections;
+    },
   },
   methods: {
     calculateSum() {
       // for each section, add its values
-      return fetchAllValues(this.allSections).reduce((a, i) => a + i, 0);
+      return fetchAllValues(this.sectionsToScore).reduce((a, i) => a + i, 0);
     },
     calculateAverage() {
       // Get sum, then divide it out by number of questions
-      let { length } = fetchAllValues(this.allSections);
+      let { length } = fetchAllValues(this.sectionsToScore);
       return this.sum / length;
+    },
+    handleFormChange() {
+      // If all fields have values, calculate results
+      if (this.allFieldsHaveValues) {
+        this.sum = this.calculateSum();
+        this.average = this.calculateAverage();
+      }
     },
   },
   watch: {
     allSections: {
       handler() {
-        // If all fields have values, calculate results
-        if (this.allFieldsHaveValues) {
-          this.sum = this.calculateSum();
-          this.average = this.calculateAverage();
-        }
+        this.handleFormChange();
       },
       deep: true,
+    },
+    top5ItemKeys() {
+      this.handleFormChange();
+    },
+    top5ToggleChoice() {
+      this.handleFormChange();
     },
   },
   data() {
     return {
       sum: undefined,
       average: undefined,
+      top5ToggleChoice: false,
     };
   },
 };
@@ -147,9 +187,19 @@ export default {
   box-shadow: 0px 0px 2px #f6412d, inset 0px 0px 2px #f6412d;
 }
 
+.results-table-title {
+  display: flex;
+  & > *:first-child {
+    flex-grow: 1;
+  }
+}
+
 @media only screen and (max-width: $SMALL) {
   .score-interp-title {
     width: 100px;
+  }
+  .results-table-title {
+    flex-direction: column;
   }
 }
 </style>

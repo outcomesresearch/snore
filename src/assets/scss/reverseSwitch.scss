@@ -1,0 +1,25 @@
+// Reversed input variant
+.v-input--reverse .v-input__slot {
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  .v-application--is-ltr & {
+    .v-input--selection-controls__input {
+      margin-right: 0;
+      margin-left: 16px;
+    }
+  }
+  .v-application--is-rtl & {
+    .v-input--selection-controls__input {
+      margin-left: 0;
+      margin-right: 16px;
+    }
+  }
+}
+
+.toggle .v-input--reverse .v-label {
+  width: 150px;
+}
+
+.toggle .v-input--selection-controls {
+  margin-top: 0px;
+}

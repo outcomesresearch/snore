@@ -114,4 +114,6 @@ export default {
   [keys.SECTION1_PROMPT_23_SHORT]: 'Competencies are questioned',
   [keys.SECTION1_PROMPT_24_SHORT]: 'Credibility is questioned',
   [keys.SECTION1_PROMPT_25_SHORT]: 'Changes in your work due to the illness',
+
+  [keys.ONLY_INCLUDE_TOP_5]: 'Only include items that most affect your health',
 };
