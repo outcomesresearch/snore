@@ -7,8 +7,10 @@
         </h4>
         <div v-else class="results mb-4">
           <h3 class="black--text mb-2">{{ t(k.SCORE) }}:</h3>
-          <pre>{{ t(k.SUM) }}: {{ sum }}</pre>
           <pre>{{ t(k.AVERAGE) }}: {{ average.toFixed(3) }}</pre>
+          <pre :class="scoreOnlyTop5 ? 'onlyTop5' : ''"
+            >{{ t(k.SUM) }}: {{ sum }}</pre
+          >
         </div>
       </div>
       <div class="toggle">
@@ -28,10 +30,18 @@
         <thead>
           <tr>
             <th class="text-left score-interp-title">
-              {{ t(k.INTERPRETATION_TITLE) }}
+              <div>
+                {{ t(k.INTERPRETATION_TITLE) }}
+              </div>
             </th>
-            <th class="text-center">{{ t(k.BASED_ON_SUM) }}</th>
-            <th class="text-center">{{ t(k.BASED_ON_AVERAGE) }}</th>
+            <th class="text-center">
+              <div v-show="!scoreOnlyTop5">
+                {{ t(k.BASED_ON_SUM) }}
+              </div>
+            </th>
+            <th class="text-center">
+              <div>{{ t(k.BASED_ON_AVERAGE) }}</div>
+            </th>
           </tr>
         </thead>
         <tbody
@@ -41,7 +51,10 @@
           <tr class="mild">
             <td class="text-left">{{ t(k.INTERPRETATION_MILD) }}</td>
             <td>
-              <div :class="isMild({ sum }).sum && `outline`">
+              <div
+                :class="isMild({ sum }).sum && `outline`"
+                v-show="!scoreOnlyTop5"
+              >
                 {{ isMild({}).phrase.sum }}
               </div>
             </td>
@@ -54,7 +67,10 @@
           <tr class="moderate">
             <td class="text-left">{{ t(k.INTERPRETATION_MODERATE) }}</td>
             <td>
-              <div :class="isModerate({ sum }).sum && `outline`">
+              <div
+                :class="isModerate({ sum }).sum && `outline`"
+                v-show="!scoreOnlyTop5"
+              >
                 {{ isModerate({}).phrase.sum }}
               </div>
             </td>
@@ -67,7 +83,10 @@
           <tr class="severe">
             <td class="text-left">{{ t(k.INTERPRETATION_SEVERE) }}</td>
             <td>
-              <div :class="isSevere({ sum }).sum && `outline`">
+              <div
+                :class="isSevere({ sum }).sum && `outline`"
+                v-show="!scoreOnlyTop5"
+              >
                 {{ isSevere({}).phrase.sum }}
               </div>
             </td>
@@ -192,6 +211,11 @@ export default {
   & > *:first-child {
     flex-grow: 1;
   }
+}
+
+.onlyTop5 {
+  color: white;
+  user-select: none;
 }
 
 @media only screen and (max-width: $SMALL) {
