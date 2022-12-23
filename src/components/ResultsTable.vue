@@ -160,6 +160,12 @@ export default {
       deep: true,
     },
     top5ItemKeys() {
+      // If chosen key length is changing so that they deselected all,
+      // flip toggle and let that watcher handle form reset
+      if (!this.top5ItemKeys.length) {
+        this.top5ToggleChoice = false;
+        return;
+      }
       this.handleFormChange();
     },
     top5ToggleChoice() {
