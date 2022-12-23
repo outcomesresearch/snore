@@ -1,6 +1,7 @@
 <template>
   <outcomes-research-wrapper :_title="`SNORE Questionnaire`">
     <v-app>
+      <outcomes-navbar></outcomes-navbar>
       <Questionnaire />
       <v-footer :padless="true">
         <v-card flat tile width="100%" class="text-center">

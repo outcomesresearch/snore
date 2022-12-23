@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import Vuetify from 'vuetify';
 import 'vuetify/dist/vuetify.min.css';
-import locales from '../assets/locales/'
+import locales from '../assets/locales/';
 
 Vue.use(Vuetify);
 
@@ -13,7 +13,7 @@ const opts = {
   theme: {
     themes: {
       light: {
-        primary: '#A52714',
+        primary: '#a51417',
       },
     },
   },
