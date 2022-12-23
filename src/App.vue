@@ -4,7 +4,7 @@
       <Questionnaire />
       <v-footer :padless="true">
         <v-card flat tile width="100%" class="text-center">
-          <v-card-text>{{ t(k.FOOTER_COPYWRIGHT) }}</v-card-text>
+          <v-card-text>{{ t(k.FOOTER_COPYRIGHT) }}</v-card-text>
         </v-card>
       </v-footer>
     </v-app>
