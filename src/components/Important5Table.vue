@@ -65,6 +65,8 @@ export default {
   margin-bottom: 10px;
   border-radius: 5px;
   cursor: pointer;
+  word-break: break-word;
+  hyphens: auto;
 
   &.reachedMax {
     color: grey;
