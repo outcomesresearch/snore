@@ -34,18 +34,11 @@ const countries = [
     abbr: 'EN',
   },
   {
-    name: 'es_us',
-    locale: 'Español',
-    flag: 'em-flag-us',
-    abbr: 'ES',
+    name: 'de_de',
+    locale: 'Deutsch',
+    flag: 'em-flag-de',
+    abbr: 'DE',
   },
-  {
-    name: 'es_sp',
-    locale: 'Español',
-    flag: 'em-flag-es',
-    abbr: 'ES',
-  },
-
   {
     name: 'nl_nl',
     locale: 'Nederlands',
@@ -53,16 +46,16 @@ const countries = [
     abbr: 'NL',
   },
   {
-    name: 'it_it',
-    locale: 'Italiano',
-    flag: 'em-flag-it',
-    abbr: 'IT',
+    name: 'pr_br',
+    locale: 'Português',
+    flag: 'em-flag-pr',
+    abbr: 'PR',
   },
   {
-    name: 'fr_ca',
-    locale: 'Français',
-    flag: 'em-flag-ca',
-    abbr: 'FR',
+    name: 'es_sp',
+    locale: 'Español',
+    flag: 'em-flag-es',
+    abbr: 'ES',
   },
 ];
 
@@ -122,8 +115,8 @@ export default {
 
 .em-it.em-svg,
 .em-flag-it.em-svg {
-  background: url('../assets/flags/it.png');
-  background-image: url('../assets/flags/it.svg'), none;
+  background: url('../assets/flags/de.png');
+  background-image: url('../assets/flags/de.svg'), none;
 }
 
 .em-flag-ca.em-svg {
@@ -137,8 +130,21 @@ export default {
   background-image: url('../assets/flags/us.svg'), none;
 }
 
+.em-nl.em-svg,
 .em-flag-nl.em-svg {
   background: url('../assets/flags/nl.png');
   background-image: url('../assets/flags/nl.svg'), none;
+}
+
+.em-pr.em-svg,
+.em-flag-pr.em-svg {
+  background: url('../assets/flags/pr.png');
+  background-image: url('../assets/flags/pr.svg'), none;
+}
+
+.em-de.em-svg,
+.em-flag-de.em-svg {
+  background: url('../assets/flags/de.png');
+  background-image: url('../assets/flags/de.svg'), none;
 }
 </style>

@@ -26,7 +26,7 @@ export default {
   components: { TranslationDropdown },
   data() {
     return {
-      foreignLanguageSupport: false,
+      foreignLanguageSupport: true,
     };
   },
 };
