@@ -46,7 +46,7 @@ const countries = [
     abbr: 'NL',
   },
   {
-    name: 'pr_br',
+    name: 'pt_br',
     locale: 'Português',
     flag: 'em-flag-pr',
     abbr: 'PR',
