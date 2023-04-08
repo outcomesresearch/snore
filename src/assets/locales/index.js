@@ -5,6 +5,7 @@ import nl_nl from './nl_nl';
 import it_it from './it_it';
 import fr_ca from './fr_ca';
 import pt_br from './pt_br';
+import de_de from './de_de';
 
 export default {
   en_us,
@@ -14,4 +15,5 @@ export default {
   it_it,
   fr_ca,
   pt_br,
+  de_de,
 };

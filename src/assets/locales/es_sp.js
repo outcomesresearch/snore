@@ -15,6 +15,7 @@ export default {
   [keys.HEADER_BODY_1]:
     'A continuación, aparece una lista de los síntomas y las consecuencias sociales/emocionales relacionadas con su enfermedad. Nos gustaría saber más sobre estos problemas y, para ello, le agradeceríamos que respondiese a las siguientes preguntas lo mejor que pueda. No existen respuestas correctas o incorrectas, y esta información solo nos la puede facilitar usted. Por favor, evalúe los problemas que haya tenido en ',
   [keys.HEADER_BODY_2]: 'las últimas dos semanas.',
+  [keys.HEADER_BODY_3]: '',
   [keys.HEADER_BODY_4]: 'Le agradecemos su participación.',
   [keys.SECTION1_INSTRUCTIONS_1]:
     'Teniendo en cuenta la intensidad de su problema cuando lo experimenta y su frecuencia, evalúe las siguientes afirmaciones según su grado de intensidad rodeando con un círculo el número que se corresponda con lo que siente, de acuerdo con la siguiente escala:',
@@ -75,7 +76,7 @@ export default {
   [keys.INTERPRETATION_2]:
     'Una puntuación del cambio de la SNORE de 0,5 se considerará la diferencia de importancia clínica mínima y las puntuaciones del cambio superiores a esta se considerarán clínicamente significativas.',
 
-  [keys.INTERPRETATION_TITLE]: 'Puntuación e interpretación de SNORE',
+  [keys.INTERPRETATION_TITLE]: 'Interpretación de la puntuación SNORE',
 
   [keys.BASED_ON_AVERAGE]: 'En base a la puntuación media',
   [keys.BASED_ON_SUM]: 'En base a la puntuación total',

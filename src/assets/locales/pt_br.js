@@ -15,6 +15,7 @@ export default {
   [keys.HEADER_BODY_1]:
     'A seguir é fornecida uma lista dos sintomas e das consequências sociais/emocionais relacionadas à sua doença. Queremos saber mais sobre esses problemas e gostaríamos que você respondesse às perguntas a seguir da melhor maneira que puder.  Não existem respostas certas ou erradas, e só você pode nos dar essas informações. Avalie os problemas que você teve nas ',
   [keys.HEADER_BODY_2]: 'últimas duas semanas.',
+  [keys.HEADER_BODY_3]: '',
   [keys.HEADER_BODY_4]: 'Agradecemos a sua participação.',
   [keys.SECTION1_INSTRUCTIONS_1]:
     'Considerando a intensidade do seu problema quando ele ocorre e com que frequência ele ocorre, avalie cada frase abaixo com base no grau de intensidade, fazendo um círculo em volta do número que corresponde ao que você sente, usando esta escala:',
@@ -69,11 +70,12 @@ export default {
   [keys.SCORE_WHEN_FORM_COMPLETE]:
     'A pontuação será exibida aqui quando o formulário estiver completo.',
 
-  [keys.INTERPRETATION_1]: 'Quando aplicados várias vezes, os escores do SNORE podem ser usados para medir a mudança nos problemas físicos e funcionais, limitações funcionais e consequências emocionais das cargas de saúde relacionadas aos distúrbios do sono ao longo do tempo e em decorrência do tratamento.',
+  [keys.INTERPRETATION_1]:
+    'Quando aplicados várias vezes, os escores do SNORE podem ser usados para medir a mudança nos problemas físicos e funcionais, limitações funcionais e consequências emocionais das cargas de saúde relacionadas aos distúrbios do sono ao longo do tempo e em decorrência do tratamento.',
   [keys.INTERPRETATION_2]:
     'Uma Pontuação de alteração do SNORE-25 de 0,5 será considerada a diferença mínima clinicamente importante e pontuações de alteração mais altas que esta serão consideradas clinicamente significativas.',
 
-  [keys.INTERPRETATION_TITLE]: '',
+  [keys.INTERPRETATION_TITLE]: 'Interpretação da Pontuação SNORE',
 
   [keys.BASED_ON_AVERAGE]: 'Com base na pontuação média',
   [keys.BASED_ON_SUM]: 'Com base na pontuação total',

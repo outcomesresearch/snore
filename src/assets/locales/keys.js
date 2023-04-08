@@ -7,6 +7,8 @@ export default {
   HEADER_TITLE: 'title of top card',
   HEADER_BODY_1: 'first section of top card body',
   HEADER_BODY_2: 'one bold section in top card body',
+  HEADER_BODY_3:
+    'for languages that have part of the sentence after "last two weeks"',
   HEADER_BODY_4: 'final thank you in top card body',
   SECTION1_INSTRUCTIONS_1: 'first part of instructions for section 1',
   TOP_5_INSTRUCTIONS: 'instructions for choosing 5 most bothersome',

@@ -27,6 +27,13 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
+  word-break: break-word;
+  hyphens: auto;
+
+  .v-label {
+    word-break: normal;
+    hyphens: initial;
+  }
 
   tbody tr:hover {
     background-color: transparent !important;

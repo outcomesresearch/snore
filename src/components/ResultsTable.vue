@@ -216,6 +216,7 @@ export default {
   display: flex;
   & > *:first-child {
     flex-grow: 1;
+    margin-right: 10px;
   }
 }
 

@@ -15,6 +15,7 @@ export default {
   [keys.HEADER_BODY_1]:
     'Below is a list of symptoms and the social/emotional consequences related to your illness. We want to know more about these problems and appreciate you answering the following questions to the best of your ability. There are no good or bad questions, and only you can give us this information. Please assess your problems that occurred within',
   [keys.HEADER_BODY_2]: 'the past two weeks.',
+  [keys.HEADER_BODY_3]: '',
   [keys.HEADER_BODY_4]: 'We thank you for your participation.',
   [keys.SECTION1_INSTRUCTIONS_1]:
     'Taking into consideration the severity of your problem when you experience it and its frequency, please assess each statement below and select its degree of severity.',
